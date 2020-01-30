@@ -1,5 +1,12 @@
 - hosts: localhost
   become: true
   tasks:
+          # - name : Updating repo
+          # apt: update_cache=yes
+
   - name: Install htop
-    apt: name=htop state=absent
+    apt: 
+        name: htop 
+        state: present
+        update_cache: yes
+

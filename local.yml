@@ -3,10 +3,14 @@
   tasks:
   - name : Updating repo
     apt: update_cache=yes
+    register: repo
 
   - name: Install htop
     apt: 
         name: htop 
         state: present
         update_cache: yes
+  - name : Displaying updated content
+    debug:
+      var: repo
 
